@@ -8,7 +8,6 @@ import RecommendedUser from "../components/RecommendedUser";
 
 const HomePage = () => {
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
-
 	const { data: recommendedUsers } = useQuery({
 		queryKey: ["recommendedUsers"],
 		queryFn: async () => {
