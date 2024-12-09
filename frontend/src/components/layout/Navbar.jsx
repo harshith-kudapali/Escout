@@ -81,11 +81,11 @@ const Navbar = () => {
                   <span className="text-xs hidden md:block">Me</span>
                 </Link>
                 <button
-                  className="flex items-center space-x-1 text-sm text-gray-600 hover:text-gray-800"
+                  className="flex items-center space-x-1 text-sm text-white hover:text-gray-800"
                   onClick={() => logout()}
                 >
                   <LogOut size={20} />
-                  <span className="hidden md:inline">Logout</span>
+                  <span className="hidden md:inline " >Logout</span>
                 </button>
               </>
             ) : (
