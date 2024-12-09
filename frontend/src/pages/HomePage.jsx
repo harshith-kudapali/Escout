@@ -16,7 +16,7 @@ const HomePage = () => {
 			return res.data;
 		},
 	});
-
+ 
 	const { data: posts } = useQuery({
 		queryKey: ["posts"],
 		queryFn: async () => {
