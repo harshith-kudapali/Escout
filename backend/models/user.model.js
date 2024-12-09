@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
 		},
 		headline: {
 			type: String,
-			default: "Escout User",
+			default: "Linkedin User",
 		},
 		location: {
 			type: String,
