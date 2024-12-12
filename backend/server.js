@@ -48,3 +48,7 @@ app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 	connectDB();
 });
+import tournamentRoutes from "./routes/tournament.route.js";
+
+// Add this with your other route imports
+app.use("/api/v1/tournaments", tournamentRoutes);
