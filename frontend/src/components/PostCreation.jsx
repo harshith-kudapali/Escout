@@ -73,7 +73,7 @@ const PostCreation = ({ user }) => {
                 {
                     contents: [{
                         parts: [{
-                            text: `Create a bold and dynamic social media post of eSports "${content}" 100 words maximum`
+                            text: `Generate a social media post of eSports based on "${content}" 100 words maximum`
                         }]
                     }]
                 }
