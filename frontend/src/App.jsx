@@ -14,7 +14,7 @@ import ProfilePage from "./pages/ProfilePage";
 import LiveStreamingPage from "./pages/LiveStreamingPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import SettingsPage from "./pages/SettingsPage";  // Import the SettingsPage component
-
+import ShopPage from "./pages/ShopPage";
 function App() {
   const { data: authUser, isLoading } = useQuery({
     queryKey: ["authUser"],
@@ -46,6 +46,7 @@ function App() {
         <Route path="/live-streaming" element={<LiveStreamingPage />} />
         <Route path="/tournaments" element={<TournamentsPage />} />
         <Route path="/settings" element={authUser ? <SettingsPage /> : <Navigate to={"/login"} />} /> {/* Added Settings route */}
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
       <Toaster />
     </Layout>

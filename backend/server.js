@@ -52,3 +52,13 @@ import tournamentRoutes from "./routes/tournament.route.js";
 
 // Add this with your other route imports
 app.use("/api/v1/tournaments", tournamentRoutes);
+
+
+/////////////////////
+
+// Integration with server.js
+
+import shopRoutes from "./routes/shop.route.js";
+
+// Add this with your other route uses
+app.use("/api/v1/shop", shopRoutes);

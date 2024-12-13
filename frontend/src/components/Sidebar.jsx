@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, UserPlus, Bell, Video, Trophy } from "lucide-react";
+import { Home, UserPlus, Bell, Video, Trophy,ShoppingCart } from "lucide-react";
 
 export default function Sidebar({ user }) {
     const location = useLocation();
@@ -88,6 +88,18 @@ export default function Sidebar({ user }) {
                                 } transition-colors`}
                             >
                                 <Bell className="mr-2" size={20} /> Notifications
+                            </Link>
+                        </li>
+                        <li>
+                        <Link
+                                to="/shop"
+                                className={`flex items-center py-2 px-4 rounded-md ${
+                                    location.pathname === "/shop"
+                                        ? "bg-primary text-white"
+                                        : "hover:bg-primary hover:text-white"
+                                } transition-colors`}
+                            >
+                                <ShoppingCart className="mr-2" size={20} /> Shop
                             </Link>
                         </li>
                     </ul>
