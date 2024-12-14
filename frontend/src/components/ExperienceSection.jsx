@@ -1,6 +1,7 @@
 import { Briefcase, X } from "lucide-react";
 import { useState } from "react";
 import { formatDate } from "../utils/dateUtils";
+import { FaTeamspeak } from "react-icons/fa";
 
 const ExperienceSection = ({ userData, isOwnProfile, onSave }) => {
 	const [isEditing, setIsEditing] = useState(false);
@@ -52,7 +53,7 @@ const ExperienceSection = ({ userData, isOwnProfile, onSave }) => {
 			{experiences.map((exp) => (
 				<div key={exp._id} className='mb-4 flex justify-between items-start'>
 					<div className='flex items-start'>
-						<Briefcase size={20} className='mr-2 mt-1' />
+						<FaTeamspeak size={20} className='mr-2 mt-1' />
 						<div>
 							<h3 className='font-semibold'>{exp.title}</h3>
 							<p className='text-gray-600'>{exp.company}</p>
@@ -74,14 +75,14 @@ const ExperienceSection = ({ userData, isOwnProfile, onSave }) => {
 				<div className='mt-4'>
 					<input
 						type='text'
-						placeholder='Title'
+						placeholder='Team Name'
 						value={newExperience.title}
 						onChange={(e) => setNewExperience({ ...newExperience, title: e.target.value })}
 						className='w-full p-2 border rounded mb-2'
 					/>
 					<input
 						type='text'
-						placeholder='Company'
+						placeholder='Role'
 						value={newExperience.company}
 						onChange={(e) => setNewExperience({ ...newExperience, company: e.target.value })}
 						className='w-full p-2 border rounded mb-2'
