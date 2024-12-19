@@ -1,17 +1,52 @@
-// src/pages/SettingsPage.jsx
-import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import React, { useState, useEffect } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { axiosInstance } from "../lib/axios";
 import Sidebar from "../components/Sidebar";
 import { User } from "lucide-react";
 
 const SettingsPage = () => {
-  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
+  const queryClient = useQueryClient();
+  const { data: authUser, isLoading } = useQuery({
+    queryKey: ["authUser"],
+    queryFn: async () => {
+      const response = await axiosInstance.get("/auth/me");
+      return response.data;
+    },
+  });
 
   const [settings, setSettings] = useState({
-    username: authUser?.username || "",
-    email: authUser?.email || "",
-    password: "", // For password change
+    name: "",
+    username: "",
+    email: "",
+    about: "",
+    location: "",
+  });
+
+  useEffect(() => {
+    if (authUser) {
+      setSettings({
+        name: authUser.name || "",
+        username: authUser.username || "",
+        email: authUser.email || "",
+        about: authUser.about || "",
+        location: authUser.location || "",
+      });
+    }
+  }, [authUser]);
+
+  const mutation = useMutation({
+    mutationFn: async (updatedSettings) => {
+      const response = await axiosInstance.put("/users/profile", updatedSettings);
+      return response.data;
+    },
+    onSuccess: (data) => {
+      alert("Profile updated successfully!");
+      queryClient.invalidateQueries(["authUser"]);
+    },
+    onError: (error) => {
+      console.error("Error updating profile:", error);
+      alert("There was an error updating your profile.");
+    },
   });
 
   const handleInputChange = (e) => {
@@ -22,16 +57,14 @@ const SettingsPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await axiosInstance.put("/users/update", settings);
-      alert("Settings updated successfully!");
-    } catch (error) {
-      console.error("Error updating settings", error);
-      alert("There was an error updating your settings.");
-    }
+    mutation.mutate(settings);
   };
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -44,49 +77,21 @@ const SettingsPage = () => {
           <h1 className="text-3xl font-bold mb-6">Account Settings</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={settings.username}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={settings.email}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
-                New Password (Optional)
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={settings.password}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            {["name", "username", "email", "about", "location"].map((field) => (
+              <div key={field}>
+                <label htmlFor={field} className="block text-gray-700 font-medium mb-2">
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                </label>
+                <input
+                  type="text"
+                  id={field}
+                  name={field}
+                  value={settings[field]}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            ))}
 
             <div className="flex justify-end">
               <button
