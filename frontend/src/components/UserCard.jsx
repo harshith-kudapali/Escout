@@ -11,7 +11,7 @@ function UserCard({ user, isConnection }) {
 				/>
 				<h3 className='font-semibold text-lg text-center'>{user.name}</h3>
 			</Link>
-			<p className='text-gray-600 text-center'>Escout user</p>
+			<p className='text-gray-600 text-center'>Fragnation user</p>
 			<p className='text-sm text-gray-500 mt-2'>{user.connections?.length} Allies</p>
 			<button className='mt-4 bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors w-full'>
 				{isConnection ? "Connected" : "Connect"}
