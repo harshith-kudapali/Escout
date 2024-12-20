@@ -1,4 +1,4 @@
-<h1 align="center">Linkedin Clone ✨</h1>
+<h1 align="center">Fragnation Clone ✨</h1>
 
 ![Demo App](/frontend/public/screenshot-for-readme.png)
 

@@ -38,7 +38,7 @@ const Navbar = () => {
               <img
                 className="h-10 rounded"
                 src="/escout-high-resolution-logo-grayscale-transparent.png"
-                alt="LinkedIn"
+                alt="Fragnation"
               />
             </Link>
           </div>

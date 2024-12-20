@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-base-100 text-neutral">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <img className="mx-auto h-40 w-auto" src="/escout-high-resolution-logo-transparent.png" alt="LinkedIn" />
+        <img className="mx-auto h-40 w-auto" src="/escout-high-resolution-logo-transparent.png" alt="Fragnation" />
 		
       </div>
 
