@@ -82,15 +82,20 @@ const NotificationsPage = () => {
 		return (
 			<Link
 				to={`/post/${relatedPost._id}`}
-				className='mt-2 p-2 bg-gray-50 rounded-md flex items-center space-x-2 hover:bg-gray-100 transition-colors'
+				className='mt-2 p-2 bg-gray-50 rounded-md block hover:bg-gray-100 transition-colors'
 			>
 				{relatedPost.image && (
-					<img src={relatedPost.image} alt='Post preview' className='w-10 h-10 object-cover rounded' />
+					<img
+						src={relatedPost.image}
+						alt='Post preview'
+						className='w-full h-auto object-cover rounded mb-2'
+					/>
 				)}
-				<div className='flex-1 overflow-hidden'>
-					<p className='text-sm text-gray-600 truncate'>{relatedPost.content}</p>
+				<p className='text-sm text-gray-600'>{relatedPost.content}</p>
+				<div className='flex items-center gap-2 mt-2 text-sm text-blue-500'>
+					<ExternalLink size={14} className='text-blue-500' />
+					View Full Post
 				</div>
-				<ExternalLink size={14} className='text-gray-400' />
 			</Link>
 		);
 	};
@@ -115,8 +120,8 @@ const NotificationsPage = () => {
 										!notification.read ? "border-blue-500" : "border-gray-200"
 									}`}
 								>
-									<div className='flex items-start justify-between'>
-										<div className='flex items-center space-x-4'>
+									<div className='flex flex-col gap-4'>
+										<div className='flex items-start gap-4'>
 											<Link to={`/profile/${notification.relatedUser.username}`}>
 												<img
 													src={notification.relatedUser.profilePicture || "/avatar.png"}
@@ -137,27 +142,27 @@ const NotificationsPage = () => {
 														addSuffix: true,
 													})}
 												</p>
-												{renderRelatedPost(notification.relatedPost)}
 											</div>
 										</div>
 
-										<div className='flex gap-2'>
+										{renderRelatedPost(notification.relatedPost)}
+
+										<div className='flex justify-end gap-2'>
 											{!notification.read && (
 												<button
 													onClick={() => markAsReadMutation(notification._id)}
-													className='p-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition-colors'
+													className='px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition-colors'
 													aria-label='Mark as read'
 												>
-													<Eye size={16} />
+													Mark as Read
 												</button>
 											)}
-
 											<button
 												onClick={() => deleteNotificationMutation(notification._id)}
-												className='p-1 bg-red-100 text-red-600 rounded hover:bg-red-200 transition-colors'
+												className='px-3 py-1 bg-red-100 text-red-600 rounded hover:bg-red-200 transition-colors'
 												aria-label='Delete notification'
 											>
-												<Trash2 size={16} />
+												Delete
 											</button>
 										</div>
 									</div>
@@ -165,7 +170,7 @@ const NotificationsPage = () => {
 							))}
 						</ul>
 					) : (
-						<p>No notification at the moment.</p>
+						<p>No notifications at the moment.</p>
 					)}
 				</div>
 			</div>
