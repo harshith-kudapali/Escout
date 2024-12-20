@@ -5,6 +5,7 @@ const postSchema = new mongoose.Schema(
 		author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 		content: { type: String },
 		image: { type: String },
+		video: { type: String }, // Add video field
 		likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 		comments: [
 			{
@@ -16,6 +17,7 @@ const postSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
+
 
 const Post = mongoose.model("Post", postSchema);
 

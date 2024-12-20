@@ -3,7 +3,7 @@ import { useState } from "react";
 import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
-import { Loader, MessageCircle, Send, Share2, ThumbsUp, Trash2 } from "lucide-react";
+import { Loader, MessageCircle, Send, Share2, ThumbsUp, Trash2, Video } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 
 import PostAction from "./PostAction";
@@ -117,6 +117,22 @@ const Post = ({ post }) => {
 				</div>
 				<p className='mb-4'>{post.content}</p>
 				{post.image && <img src={post.image} alt='Post content' className='rounded-lg w-full mb-4' />}
+				
+{/* Video Handling */}
+{post.video && (
+    <div className='mb-4'>
+        <video 
+            controls 
+            className='w-full rounded-lg' 
+            autoPlay  // Autoplay the video once it's rendered
+            muted     // Optionally mute the video for autoplay
+        >
+            <source src={post.video} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+)}
+
 
 				<div className='flex justify-between text-info'>
 					<PostAction
@@ -179,4 +195,5 @@ const Post = ({ post }) => {
 		</div>
 	);
 };
+
 export default Post;

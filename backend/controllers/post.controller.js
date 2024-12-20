@@ -19,31 +19,40 @@ export const getFeedPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
 	try {
-		const { content, image } = req.body;
+		const { content, image, video } = req.body;
 		let newPost;
+
+		// Upload video and/or image if provided
+		let uploadedImage = null;
+		let uploadedVideo = null;
 
 		if (image) {
 			const imgResult = await cloudinary.uploader.upload(image);
-			newPost = new Post({
-				author: req.user._id,
-				content,
-				image: imgResult.secure_url,
-			});
-		} else {
-			newPost = new Post({
-				author: req.user._id,
-				content,
-			});
+			uploadedImage = imgResult.secure_url;
 		}
 
-		await newPost.save();
+		if (video) {
+			const videoResult = await cloudinary.uploader.upload(video, {
+				resource_type: "video", // Specify video type
+			});
+			uploadedVideo = videoResult.secure_url;
+		}
 
+		newPost = new Post({
+			author: req.user._id,
+			content,
+			image: uploadedImage,
+			video: uploadedVideo,
+		});
+
+		await newPost.save();
 		res.status(201).json(newPost);
 	} catch (error) {
 		console.error("Error in createPost controller:", error);
 		res.status(500).json({ message: "Server error" });
 	}
 };
+
 
 export const deletePost = async (req, res) => {
 	try {
@@ -65,6 +74,13 @@ export const deletePost = async (req, res) => {
 		if (post.image) {
 			await cloudinary.uploader.destroy(post.image.split("/").pop().split(".")[0]);
 		}
+
+		if (post.video) {
+			await cloudinary.uploader.destroy(post.video.split("/").pop().split(".")[0], {
+				resource_type: "video",
+			});
+		}
+		
 
 		await Post.findByIdAndDelete(postId);
 
