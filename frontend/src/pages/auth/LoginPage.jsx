@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-base-100 text-neutral">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <img className="mx-auto h-40 w-auto" src="/Fragnation-high-resolution-logo-transparent.png" alt="Fragnation" />
+        <img className="mx-auto h-40 w-auto" src="/FragNation-high-resolution-logo-transparent.png" alt="FragNation" />
 		
       </div>
 
@@ -18,7 +18,7 @@ const LoginPage = () => {
                 <div className="w-full border-t border-info background-transparent"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-black text-white text-info">New to Fragnation?</span>
+                <span className="px-2 bg-black text-white text-info">New to FragNation?</span>
               </div>
             </div>
             <div className="mt-6">

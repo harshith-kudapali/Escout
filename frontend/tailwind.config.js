@@ -10,8 +10,8 @@ export default {
   daisyui: {
     themes: [
       {
-        Fragnation: {
-          primary: "#0A66C2", // Fragnation Blue (remains same, but can make it darker if needed)
+        FragNation: {
+          primary: "#0A66C2", // FragNation Blue (remains same, but can make it darker if needed)
           secondary: "#4152aa", // Dark background (dark mode)
           accent: "#4CAF50", // Dark Green for accents (a bit darker version)
           neutral: "#ffffff", // Lighter gray for text in dark theme

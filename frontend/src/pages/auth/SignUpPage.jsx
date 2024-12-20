@@ -5,7 +5,7 @@ const SignUpPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-base-100 text-neutral">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <img className="mx-auto h-40 w-auto" src="/Fragnation-high-resolution-logo-transparent.png" alt="Fragnation" />
+        <img className="mx-auto h-40 w-auto" src="/FragNation-high-resolution-logo-transparent.png" alt="FragNation" />
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md shadow-md bg-base-200">

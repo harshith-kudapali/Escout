@@ -121,7 +121,7 @@ const RecommendedUser = ({ user }) => {
 				/>
 				<div>
 					<h3 className='font-semibold text-sm'>{user.name}</h3>
-					<p className='text-xs text-info'>Fragnation user</p>
+					<p className='text-xs text-info'>FragNation user</p>
 				</div>
 			</Link>
 			{renderButton()}

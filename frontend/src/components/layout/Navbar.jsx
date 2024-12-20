@@ -37,8 +37,8 @@ const Navbar = () => {
             <Link to="/">
               <img
                 className="h-10 rounded"
-                src="/Fragnation-high-resolution-logo-grayscale-transparent.png"
-                alt="Fragnation"
+                src="/FragNation-high-resolution-logo-grayscale-transparent.png"
+                alt="FragNation"
               />
             </Link>
           </div>

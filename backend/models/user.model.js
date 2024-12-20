@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
 		},
 		headline: {
 			type: String,
-			default: "Fragnation User",
+			default: "FragNation User",
 		},
 		location: {
 			type: String,

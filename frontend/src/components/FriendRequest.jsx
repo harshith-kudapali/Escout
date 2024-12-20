@@ -43,7 +43,7 @@ const FriendRequest = ({ request }) => {
 					<Link to={`/profile/${request.sender.username}`} className='font-semibold text-lg'>
 						{request.sender.name}
 					</Link>
-					<p className='text-gray-600'>Fragnation user</p>
+					<p className='text-gray-600'>FragNation user</p>
 				</div>
 			</div>
 

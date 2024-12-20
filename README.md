@@ -1,4 +1,4 @@
-<h1 align="center">Fragnation Clone ✨</h1>
+<h1 align="center">FragNation Clone ✨</h1>
 
 ![Demo App](/frontend/public/screenshot-for-readme.png)
 
@@ -54,4 +54,4 @@ npm run build
 ```shell
 npm run start
 ```
-"# Fragnation" 
+"# FragNation" 

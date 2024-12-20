@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 
 export const protectRoute = async (req, res, next) => {
 	try {
-		const token = req.cookies["jwt-Fragnation"];
+		const token = req.cookies["jwt-FragNation"];
 
 		if (!token) {
 			return res.status(401).json({ message: "Unauthorized - No Token Provided" });
