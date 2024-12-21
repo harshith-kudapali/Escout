@@ -34,7 +34,7 @@ const NotificationsPage = () => {
 	const renderNotificationIcon = (type) => {
 		switch (type) {
 			case "like":
-				return <ThumbsUp className='text-blue-500' />;
+				return <ThumbsUp className='text-blue-500 ' />;
 
 			case "comment":
 				return <MessageSquare className='text-green-500' />;
@@ -82,7 +82,7 @@ const NotificationsPage = () => {
 		return (
 			<Link
 				to={`/post/${relatedPost._id}`}
-				className='mt-2 p-2 bg-gray-50 rounded-md block hover:bg-gray-100 transition-colors'
+				className='mt-2 p-2 bg-secondary rounded-md block hover:bg-gray-600 transition-colors'
 			>
 				{relatedPost.image && (
 					<img
@@ -91,7 +91,7 @@ const NotificationsPage = () => {
 						className='w-full h-auto object-cover rounded mb-2'
 					/>
 				)}
-				<p className='text-sm text-gray-600'>{relatedPost.content}</p>
+				<p className='text-sm text-neutral'>{relatedPost.content}</p>
 				<div className='flex items-center gap-2 mt-2 text-sm text-blue-500'>
 					<ExternalLink size={14} className='text-blue-500' />
 					View Full Post
@@ -106,7 +106,7 @@ const NotificationsPage = () => {
 				<Sidebar user={authUser} />
 			</div>
 			<div className='col-span-1 lg:col-span-3'>
-				<div className='bg-white rounded-lg shadow p-6'>
+				<div className='bg-secondary rounded-lg shadow p-6'>
 					<h1 className='text-2xl font-bold mb-6 text-primary'>Notifications</h1>
 
 					{isLoading ? (
@@ -116,7 +116,7 @@ const NotificationsPage = () => {
 							{notifications.data.map((notification) => (
 								<li
 									key={notification._id}
-									className={`bg-white border rounded-lg p-4 my-4 transition-all hover:shadow-md ${
+									className={`bg-secondary border rounded-lg p-4 my-4 transition-all hover:shadow-md ${
 										!notification.read ? "border-blue-500" : "border-gray-200"
 									}`}
 								>
