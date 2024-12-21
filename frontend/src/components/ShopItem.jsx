@@ -9,15 +9,11 @@ const ShopItem = ({ item }) => {
 
   return (
     <div className="bg-secondary rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-      {/* Image Container with Object Cover */}
-      <div className="relative w-full">
-        <img 
-          src={item.imageUrl} 
-          alt={item.name} 
-          className="w-full h-full object-cover"  // Ensure it covers the container without distortion
-        />
-      </div>
-
+      <img 
+        src={item.imageUrl} 
+        alt={item.name} 
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
         <h3 className="font-semibold text-primary text-lg mb-2">{item.name}</h3>
         <p className="text-neutral mb-2 truncate">{item.description}</p>
