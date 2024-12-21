@@ -73,13 +73,13 @@ const SettingsPage = () => {
       </div>
 
       <div className="col-span-1 lg:col-span-2 order-first lg:order-none">
-        <div className="bg-white rounded-lg shadow p-8">
-          <h1 className="text-3xl font-bold mb-6">Account Settings</h1>
+        <div className="bg-secondary rounded-lg shadow p-8">
+          <h1 className="text-3xl text-primary font-bold mb-6">Account Settings</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {["name", "username", "email", "about", "location"].map((field) => (
               <div key={field}>
-                <label htmlFor={field} className="block text-gray-700 font-medium mb-2">
+                <label htmlFor={field} className="block text-Neutral font-medium mb-2">
                   {field.charAt(0).toUpperCase() + field.slice(1)}
                 </label>
                 <input
@@ -88,7 +88,7 @@ const SettingsPage = () => {
                   name={field}
                   value={settings[field]}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-accent bg-secondary text-Neutral px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             ))}
@@ -96,7 +96,7 @@ const SettingsPage = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none"
+                className="px-6 py-2 bg-primary text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none"
               >
                 Save Changes
               </button>
@@ -109,10 +109,10 @@ const SettingsPage = () => {
         <div className="bg-secondary rounded-lg shadow p-4">
           <h2 className="font-semibold mb-4">Account Info</h2>
           <div className="flex items-center mb-4">
-            <User size={32} className="mr-4 text-blue-500" />
+            <User size={32} className="mr-4 text-accent-content" />
             <div>
-              <p className="text-sm text-gray-600">Username: {authUser?.username}</p>
-              <p className="text-sm text-gray-600">Email: {authUser?.email}</p>
+              <p className="text-sm text-neutral">Username: {authUser?.username}</p>
+              <p className="text-sm text-neutral">Email: {authUser?.email}</p>
             </div>
           </div>
         </div>
