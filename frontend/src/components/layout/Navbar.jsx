@@ -30,7 +30,7 @@ const Navbar = () => {
   const unreadConnectionRequestsCount = connectionRequests?.data?.length;
 
   return (
-    <nav className="bg-secondary shadow-md sticky top-0 z-10">
+    <nav className="bg-secondary border-b-2 border-accent border-opacity-60 shadow-md sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center space-x-4">
@@ -85,7 +85,7 @@ const Navbar = () => {
                   <span className="text-xs hidden md:block">Settings</span>
                 </Link>
                 <button
-                  className="flex items-center space-x-1 text-sm text-white hover:text-gray-800"
+                  className="flex items-center space-x-1 text-sm text-neutral hover:text-accent-content"
                   onClick={() => logout()}
                 >
                   <LogOut size={20} />
@@ -97,14 +97,14 @@ const Navbar = () => {
                 {/* Gradient Sign In Button */}
                 <Link
                   to="/login"
-                  className="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                  className="py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary"
                 >
                   Sign In
                 </Link>
                 {/* Gradient Join Now Button */}
                 <Link
                   to="/signup"
-                  className="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                  className="py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary"
                 >
                   Join Now
                 </Link>
