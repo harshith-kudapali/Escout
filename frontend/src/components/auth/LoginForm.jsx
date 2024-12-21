@@ -31,7 +31,7 @@ const LoginForm = () => {
 				placeholder='Username'
 				value={username}
 				onChange={(e) => setUsername(e.target.value)}
-				className='border-accent input input-bordered w-full'
+				className='border-black input input-bordered w-full'
 				required
 				
 			/>
@@ -40,14 +40,14 @@ const LoginForm = () => {
 				placeholder='Password'
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
-				className='border-accent input input-bordered w-full'
+				className='border-black input input-bordered w-full'
 				required
 			/>
 			
 
 			<button
 				type="submit"
-				className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white font-medium bg-[#4152aa]"
+				className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white font-medium bg-primary hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-focus"
 			>
 				{isLoading ? (
 					<Loader className="size-5 animate-spin" />
