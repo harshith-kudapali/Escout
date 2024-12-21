@@ -113,7 +113,7 @@ const PostCreation = ({ user }) => {
                 <img src={user.profilePicture || "/avatar.png"} alt={user.name} className='size-12 rounded-full' />
                 <textarea
                     placeholder="What's on your mind?"
-                    className='w-full p-3 rounded-lg bg-base-100 hover:bg-base-200 focus:bg-base-200 focus:outline-none resize-none transition-colors duration-200 min-h-[100px]'
+                    className='w-full p-3 rounded-lg bg-base-100   text-neutral  resize-none transition-colors duration-200 min-h-[100px]'
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
@@ -140,20 +140,22 @@ const PostCreation = ({ user }) => {
                     </label>
                 </div>
 
-                <button
-                    onClick={generatePost}
-                    disabled={isGenerating}
-                    className='bg-purple-500 text-white rounded-lg px-4 py-2 hover:bg-purple-600 transition-colors duration-200 flex items-center'>
-                    <Wand2 className='mr-2' size={20} /> {isGenerating ? 'Generating...' : 'Generate Post'}
-                </button>
+                <div className='flex space-x-2'>
+                    <button
+                        onClick={generatePost}
+                        disabled={isGenerating}
+                        className='bg-purple-500 text-white rounded-lg px-2 py-2 hover:bg-purple-600 transition-colors duration-200 flex items-center'>
+                        <Wand2 className='mr-2' size={20} /> {isGenerating ? 'Generating...' : 'Generate'}
+                    </button>
 
-                <button
-                    className='bg-primary text-white rounded-lg px-4 py-2 hover:bg-primary-dark transition-colors duration-200'
-                    onClick={handlePostCreation}
-                    disabled={isPending}
-                >
-                    {isPending ? <Loader className='size-5 animate-spin' /> : "Share"}
-                </button>
+                    <button
+                        className='bg-primary text-white rounded-lg px-4 py-2 hover:bg-primary-dark transition-colors duration-200'
+                        onClick={handlePostCreation}
+                        disabled={isPending}
+                    >
+                        {isPending ? <Loader className='size-5 animate-spin' /> : "Share"}
+                    </button>
+                </div>
             </div>
         </div>
     );
