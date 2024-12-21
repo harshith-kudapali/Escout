@@ -79,8 +79,8 @@ const TournamentsPage = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8">
         {/* Tournament Creation Form */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
+        <div className="bg-secondary shadow-lg rounded-lg p-6">
+          <h2 className="text-2xl text-primary font-bold mb-6 flex items-center">
             <Trophy className="mr-2 text-primary" /> Create Tournament
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -91,7 +91,8 @@ const TournamentsPage = () => {
                 name="name"
                 value={tournamentForm.name}
                 onChange={handleInputChange}
-                className="input input-bordered w-full"
+                placeholder="Enter tournament name"
+                className="input bg-secondary border-accent input-bordered w-full"
                 required
               />
             </div>
@@ -100,8 +101,9 @@ const TournamentsPage = () => {
               <select
                 name="game"
                 value={tournamentForm.game}
+                placeholder="Select game"
                 onChange={handleInputChange}
-                className="select select-bordered w-full"
+                className="border-accent bg-secondary select select-bordered w-full"
                 required
               >
                 <option value="">Select Game</option>
@@ -116,8 +118,9 @@ const TournamentsPage = () => {
               <textarea
                 name="description"
                 value={tournamentForm.description}
+                placeholder="Enter tournament description"
                 onChange={handleInputChange}
-                className="textarea textarea-bordered w-full"
+                className="border-accent bg-secondary textarea textarea-bordered w-full"
                 required
               />
             </div>
@@ -128,8 +131,9 @@ const TournamentsPage = () => {
                   type="date"
                   name="startDate"
                   value={tournamentForm.startDate}
+
                   onChange={handleInputChange}
-                  className="input input-bordered w-full"
+                  className="bg-secondary border-accent input  input-bordered w-full"
                   required
                 />
               </div>
@@ -140,7 +144,7 @@ const TournamentsPage = () => {
                   name="endDate"
                   value={tournamentForm.endDate}
                   onChange={handleInputChange}
-                  className="input input-bordered w-full"
+                  className=" bg-secondary border-accent input input-bordered w-full"
                   required
                 />
               </div>
@@ -153,9 +157,10 @@ const TournamentsPage = () => {
                   name="maxParticipants"
                   value={tournamentForm.maxParticipants}
                   onChange={handleInputChange}
-                  className="input input-bordered w-full"
+                  className="border-accent bg-secondary input input-bordered w-full"
                   min="4"
                   max="64"
+                  placeholder="4-64"
                   required
                 />
               </div>
@@ -166,15 +171,16 @@ const TournamentsPage = () => {
                   name="prizePool"
                   value={tournamentForm.prizePool}
                   onChange={handleInputChange}
-                  className="input input-bordered w-full"
+                  className="border-accent bg-secondary input input-bordered w-full"
                   min="0"
+                  placeholder="0"
                   required
                 />
               </div>
             </div>
             <button 
               type="submit" 
-              className="btn btn-primary w-full mt-4"
+              className="btn btn-primary text-white w-full mt-4"
               disabled={createTournamentMutation.isLoading}
             >
               Create Tournament
@@ -183,14 +189,14 @@ const TournamentsPage = () => {
         </div>
 
         {/* Tournaments List */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
+        <div className="bg-secondary shadow-lg rounded-lg p-6">
+          <h2 className="text-2xl text-primary font-bold mb-6 flex items-center">
             <GamepadIcon className="mr-2 text-primary" /> Active Tournaments
           </h2>
           {isLoading ? (
             <div className="text-center">Loading tournaments...</div>
           ) : tournaments?.length === 0 ? (
-            <div className="text-center text-gray-500">
+            <div className="text-center text-neutral">
               No tournaments available
             </div>
           ) : (
@@ -198,13 +204,13 @@ const TournamentsPage = () => {
               {tournaments?.map((tournament) => (
                 <div 
                   key={tournament._id} 
-                  className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+                  className="border rounded-lg border-accent p-4 hover:shadow-md transition-shadow"
                 >
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="font-bold text-lg">{tournament.name}</h3>
-                    <span className="badge badge-primary">{tournament.game}</span>
+                    <h3 className="font-bold text-accent text-lg">{tournament.name}</h3>
+                    <span className="badge bg-accent-content badge-primary">{tournament.game}</span>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">{tournament.description}</p>
+                  <p className="text-sm text-neutral mb-2">{tournament.description}</p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     <div>
                       <strong>Start:</strong> {new Date(tournament.startDate).toLocaleDateString()}
@@ -223,7 +229,7 @@ const TournamentsPage = () => {
                   </div>
                   <button 
                     onClick={() => handleJoinTournament(tournament._id)}
-                    className="btn btn-outline btn-primary w-full"
+                    className="btn btn-primary text-white "
                     disabled={tournament.participants.length >= tournament.maxParticipants}
                   >
                     {tournament.participants.length >= tournament.maxParticipants 
