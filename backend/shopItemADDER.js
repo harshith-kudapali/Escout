@@ -6,39 +6,75 @@ dotenv.config();
 
 const seedShopItems = [
   {
-    name: 'Gaming Headset',
-    description: 'High-quality gaming headset with noise cancellation',
-    price: 129.99,
+    name: 'RAZER BASILISK V3 PRO 35K',
+    description: 'Our most advanced wireless ergonomic RGB gaming mouse, featuring our newest sensor and highly adjustable tilt wheel.',
+    price: 299.99,
     category: 'Electronics',
-    imageUrl: "https://8mm.in/cdn/shop/files/2_90df86c1-3a44-4d92-8909-b98a25e374fd_900x900.png?v=1707574730",
-    stock: 4,
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/392d2ff1497385d9db4575e709d058ac/500x500-basilisklinepg-productline-basiliskv3pro.webp",
+    stock: 10,
     creator: null // You'll need to replace with a valid user ID
   },
   {
-    name: 'Compact Wireless Gaming Mouse',
-    description: 'Razer Cobra Pro Compact Wireless Gaming Mouse with Underglow Lighting I High Speed Wireless, Bluetooth, 8 Buttons, 3rd Gen 30K Optical Sensor Switch, Focus Pro-RZ01-04660100-R3A1',
+    name: 'RAZER COBRA PRO',
+    description: 'A wireless gaming mouse packed with 3 modes of connection, 11-zone Chroma RGB with underglow and compatible with wireless charging.',
     price: 299.99,
     category: 'Electronics',
-    imageUrl: "https://m.media-amazon.com/images/I/71tuAoPh-LL._AC_UL640_QL65_.jpg",
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/780a74ce808f4b7c0a5c3a389cb98eed/razer-cobra-line-cobrapro_500x500.jpg",
+    stock: 10,
+    creator: null // You'll need to replace with a valid user ID
+  },
+  {
+    name: 'RAZER COBRA',
+    description: 'An ultra-lightweight wired gaming mouse with single-zone gradient Chroma RGB with underglow.',
+    price: 199.99,
+    category: 'Electronics',
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/780a74ce808f4b7c0a5c3a389cb98eed/razer-cobra-line-cobra_500x500.jpg",
     stock: 20,
     creator: null // You'll need to replace with a valid user ID
   },
   {
-    name: 'Logitech G304 Lightspeed Wireless Gaming Mouse',
-    description: 'Logitech G304 Lightspeed Wireless Gaming Mouse, Hero Sensor, 12,000 DPI, Lightweight, 6 Programmable Buttons, 250h Battery Life, On-Board Memory, Compatible with PC/Mac - White',
-    price: 139.99,
+    name: 'RAZER COBRA',
+    description: 'An ultra-lightweight wired gaming mouse with single-zone gradient Chroma RGB with underglow.',
+    price: 199.99,
     category: 'Electronics',
-    imageUrl: "https://m.media-amazon.com/images/I/51DYDLykzoL._AC_UL640_QL65_.jpg",
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/780a74ce808f4b7c0a5c3a389cb98eed/razer-cobra-line-cobra_500x500.jpg",
+    stock: 20,
+    creator: null // You'll need to replace with a valid user ID
+  },
+  {
+    name: 'RAZER HUNTSMAN V3 PRO',
+    description: 'Opt for complete control and customization with a full-size wired model featuring an LED array indicator, dedicated volume dial, 2 macro buttons, and 1 media button.',
+    price: 439.99,
+    category: 'Electronics',
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/1a0339cc1621d3b23d7e79658bea2c4a/razer-huntsman-v3-pro-line_500x500-v2.webp",
     stock:10,
     creator: null // You'll need to replace with a valid user ID
   },
   {
-    name: 'Wired USB Gaming',
-    description: 'Logitech G502 Hero High Performance Wired USB Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black',
-    price: 159.99,
+    name: 'RAZER HUNTSMAN V3 PRO MINI',
+    description: 'Get maximum space to maneuver your mouse with a compact 60% keyboard that features dual-purpose modifier keys for arrow key functionality.',
+    price: 359.99,
     category: 'Electronics',
-    imageUrl: "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UY436_QL65_.jpg",
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/1a0339cc1621d3b23d7e79658bea2c4a/razer-huntsman-v3-pro-mini-line_500x500-v2.webp",
     stock:30,
+    creator: null // You'll need to replace with a valid user ID
+  },
+  {
+    name: 'RAZER PHANTOM KEYCAP UPGRADE SET',
+    description: 'Unique stealth and dual-layer pudding design',
+    price: 29.99,
+    category: 'Electronics',
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/a9e957f79c2c0cbf6015e8807b3c7a6c/img-phantomkeycaps.webp",
+    stock:10,
+    creator: null // You'll need to replace with a valid user ID
+  },
+  {
+    name: 'RAZER BARRACUDA X CHROMA',
+    description: 'Enjoy true audio versatility and flair anywhere with our latest wireless multi-platform RGB headset.',
+    price: 29.99,
+    category: 'Electronics',
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/9f2d541ade00026dd7cca4d10fabfba7/razer-barracuda-x-chroma-500x500.webp",
+    stock:10,
     creator: null // You'll need to replace with a valid user ID
   },
   // Add more items...
