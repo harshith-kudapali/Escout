@@ -33,11 +33,11 @@ const seedShopItems = [
     creator: null // You'll need to replace with a valid user ID
   },
   {
-    name: 'RAZER COBRA',
+    name: 'RAZER COBRA MARK 1',
     description: 'An ultra-lightweight wired gaming mouse with single-zone gradient Chroma RGB with underglow.',
     price: 1899.99,
     category: 'Electronics',
-    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/780a74ce808f4b7c0a5c3a389cb98eed/razer-cobra-line-cobra_500x500.jpg",
+    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/392d2ff1497385d9db4575e709d058ac/500x500-basilisklinepg-productline-basiliskv3.webp",
     stock: 20,
     creator: null // You'll need to replace with a valid user ID
   },
@@ -68,15 +68,7 @@ const seedShopItems = [
     stock:10,
     creator: null // You'll need to replace with a valid user ID
   },
-  {
-    name: 'RAZER BARRACUDA X CHROMA',
-    description: 'Enjoy true audio versatility and flair anywhere with our latest wireless multi-platform RGB headset.',
-    price: 3299.99,
-    category: 'Electronics',
-    imageUrl: "https://assets2.razerzone.com/images/pnx.assets/9f2d541ade00026dd7cca4d10fabfba7/razer-barracuda-x-chroma-500x500.webp",
-    stock:10,
-    creator: null // You'll need to replace with a valid user ID
-  },
+
   // Add more items...
 ];
 
