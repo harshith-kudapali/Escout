@@ -18,7 +18,7 @@ const ShopItem = ({ item }) => {
         <h3 className="font-semibold text-primary text-lg mb-2">{item.name}</h3>
         <p className="text-neutral mb-2 truncate">{item.description}</p>
         <div className="flex justify-between items-center">
-          <span className="text-green-500 font-bold">${item.price.toFixed(2)}</span>
+          <span className="text-green-500 font-bold"> ₹ {item.price.toFixed(2)}</span>
           <button 
             onClick={handleAddToCart}
             className="flex items-center bg-primary text-white px-3 py-2 rounded hover:bg-blue-600"
