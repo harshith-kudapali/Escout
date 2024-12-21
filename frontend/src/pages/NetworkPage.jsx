@@ -25,7 +25,7 @@ const NetworkPage = () => {
 			</div>
 			<div className='col-span-1 lg:col-span-3'>
 				<div className='bg-secondary rounded-lg shadow p-6 mb-6'>
-					<h1 className='text-2xl font-bold mb-6 text-white'>My Network</h1>
+					<h1 className='text-2xl font-bold mb-6 text-primary'>My Network</h1>
 
 					{connectionRequests?.data?.length > 0 ? (
 						<div className='mb-8'>
@@ -37,10 +37,10 @@ const NetworkPage = () => {
 							</div>
 						</div>
 					) : (
-						<div className='bg-white rounded-lg shadow p-6 text-center mb-6'>
-							<UserPlus size={48} className='mx-auto text-gray-400 mb-4' />
-							<h3 className='text-2xl font-bold text-glow mb-2 text-black'>No Squad Invites Yet!</h3>
-							<p className='text-gray-400'>
+						<div className='bg-secondary border-2 border-accent rounded-lg shadow p-6 text-center mb-6'>
+							<UserPlus size={48} className='mx-auto text-neutral mb-4' />
+							<h3 className='text-2xl font-bold text-glow mb-2 text-accent'>No Squad Invites Yet!</h3>
+							<p className='text-neutral'>
 								Looks like no one has hit you up to team up yet.
 							</p>
 							<p className='text-gray-400 mt-2'>
@@ -50,8 +50,8 @@ const NetworkPage = () => {
 					)}
 					{connections?.data?.length > 0 && (
 						<div className='mb-8'>
-							<h2 className='text-xl font-semibold mb-4 text-white'>My Allies</h2>
-							<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+							<h2 className='text-xl font-semibold mb-4 text-primary'>My Allies</h2>
+							<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-b border-accent py-4'>
 								{connections.data.map((connection) => (
 									<UserCard key={connection._id} user={connection} isConnection={true} />
 								))}

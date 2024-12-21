@@ -29,7 +29,7 @@ const FriendRequest = ({ request }) => {
 	});
 
 	return (
-		<div className='bg-white rounded-lg shadow p-4 flex items-center justify-between transition-all hover:shadow-md'>
+		<div className='bg-secondary border-2 border-accent rounded-lg shadow p-4 flex items-center justify-between transition-all hover:shadow-md'>
 			<div className='flex items-center gap-4'>
 				<Link to={`/profile/${request.sender.username}`}>
 					<img
@@ -55,7 +55,7 @@ const FriendRequest = ({ request }) => {
 					Accept
 				</button>
 				<button
-					className='bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors'
+					className='bg-red-600 text-gray-800 px-4 py-2 rounded-md hover:bg-red-300 transition-colors'
 					onClick={() => rejectConnectionRequest(request._id)}
 				>
 					Reject
