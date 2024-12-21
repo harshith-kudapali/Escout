@@ -145,7 +145,7 @@ const PostCreation = ({ user }) => {
                         onClick={generatePost}
                         disabled={isGenerating}
                         className='bg-purple-500 text-white rounded-lg px-2 py-2 hover:bg-purple-600 transition-colors duration-200 flex items-center'>
-                        <Wand2 className='mr-2' size={20} /> {isGenerating ? 'Generating...' : 'Generate'}
+                        <Wand2 className='mr-2' size={20} /> {isGenerating ? 'Generating...' : 'AI Generate'}
                     </button>
 
                     <button
