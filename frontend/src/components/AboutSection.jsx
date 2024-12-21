@@ -16,7 +16,7 @@ const AboutSection = ({ userData, isOwnProfile, onSave }) => {
     };
 
     return (
-        <div className='bg-white shadow rounded-lg p-6 mb-6'>
+        <div className='bg-secondary shadow rounded-lg p-6 mb-6 text-neutral'>
             <h2 className='text-xl font-semibold mb-4 text-primary'>About</h2>
             {isOwnProfile ? (
                 isEditing ? (
@@ -24,7 +24,7 @@ const AboutSection = ({ userData, isOwnProfile, onSave }) => {
                         <textarea
                             value={about}
                             onChange={(e) => setAbout(e.target.value)}
-                            className='w-full p-2 border rounded text-black'
+                            className='bg-secondary w-full p-2 border rounded text-neutral'
                             rows='4'
                         />
                         <button

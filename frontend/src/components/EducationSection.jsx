@@ -34,16 +34,16 @@ const EducationSection = ({ userData, isOwnProfile, onSave }) => {
 	};
 
 	return (
-		<div className='bg-white shadow rounded-lg p-6 mb-6'>
+		<div className='bg-secondary shadow rounded-lg p-6 mb-6'>
 			<h2 className='text-xl font-semibold mb-4 text-primary'>My History</h2>
 			{educations.map((edu) => (
 				<div key={edu._id} className='mb-4 flex justify-between items-start'>
 					<div className='flex items-start'>
-						<RiGameLine  size={20} className='mr-2 mt-1' />
+					<RiGameLine size={20} className="mr-2 mt-1 text-accent-content" />
 						<div>
-							<h3 className='font-semibold'>{edu.fieldOfStudy}</h3>
-							<p className='text-gray-600'>{edu.school}</p>
-							<p className='text-gray-500 text-sm'>
+							<h3 className='text-nutral font-semibold'>{edu.fieldOfStudy}</h3>
+							<p className='text-accent'>{edu.school}</p>
+							<p className='text-accent-content text-sm'>
 								{edu.startYear} - {edu.endYear || "Present"}
 							</p>
 						</div>
@@ -59,31 +59,31 @@ const EducationSection = ({ userData, isOwnProfile, onSave }) => {
 				<div className='mt-4'>
 					<input
 						type='text'
-						placeholder='Game'
+						placeholder='Game/Company/Team/Organization'
 						value={newEducation.school}
 						onChange={(e) => setNewEducation({ ...newEducation, school: e.target.value })}
-						className='w-full p-2 border rounded mb-2'
+						className='bg-secondary w-full p-2 border rounded mb-2'
 					/>
 					<input
 						type='text'
 						placeholder='Description'
 						value={newEducation.fieldOfStudy}
 						onChange={(e) => setNewEducation({ ...newEducation, fieldOfStudy: e.target.value })}
-						className='w-full p-2 border rounded mb-2'
+						className='bg-secondary w-full p-2 border rounded mb-2'
 					/>
 					<input
 						type='number'
-						placeholder='Started On'
+						placeholder='Started Year'
 						value={newEducation.startYear}
 						onChange={(e) => setNewEducation({ ...newEducation, startYear: e.target.value })}
-						className='w-full p-2 border rounded mb-2'
+						className='bg-secondary w-full p-2 border rounded mb-2'
 					/>
 					<input
 						type='number'
-						placeholder='Ended On'
+						placeholder='Ended Year'
 						value={newEducation.endYear}
 						onChange={(e) => setNewEducation({ ...newEducation, endYear: e.target.value })}
-						className='w-full p-2 border rounded mb-2'
+						className='bg-secondary w-full p-2 border rounded mb-2'
 					/>
 					<button
 						onClick={handleAddEducation}

@@ -48,19 +48,19 @@ const ExperienceSection = ({ userData, isOwnProfile, onSave }) => {
 	};
 
 	return (
-		<div className='bg-white shadow rounded-lg p-6 mb-6'>
+		<div className='bg-secondary shadow rounded-lg p-6 mb-6'>
 			<h2 className='text-xl font-semibold mb-4 text-primary'>Experience</h2>
 			{experiences.map((exp) => (
 				<div key={exp._id} className='mb-4 flex justify-between items-start'>
 					<div className='flex items-start'>
-						<FaTeamspeak size={20} className='mr-2 mt-1' />
+						<FaTeamspeak size={20} className='text-accent mr-2 mt-1' />
 						<div>
-							<h3 className='font-semibold'>{exp.title}</h3>
-							<p className='text-gray-600'>{exp.company}</p>
-							<p className='text-gray-500 text-sm'>
+							<h3 className='text-accent font-semibold'>{exp.title}</h3>
+							<p className='text-neutral'>{exp.company}</p>
+							<p className='text-accent-content text-sm'>
 								{formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : "Present"}
 							</p>
-							<p className='text-gray-700'>{exp.description}</p>
+							<p className='text-neutral'>{exp.description}</p>
 						</div>
 					</div>
 					{isEditing && (
