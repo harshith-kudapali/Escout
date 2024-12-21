@@ -68,42 +68,42 @@ const LiveStreamingPage = () => {
               />
             </div>
             
-            {/* Stream Info */}
-            <div className="bg-gray-800 rounded-lg p-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <img src="/api/placeholder/48/48" alt="Streamer" className="rounded-full" />
-                  <div>
-                    <h2 className="text-xl font-bold text-white">{selectedStream.title}</h2>
-                    <p className="text-purple-400">{selectedStream.streamer}</p>
-                    <p className="text-gray-400">{selectedStream.game}</p>
+           { /* Stream Info */}
+                  <div className="bg-secondary rounded-lg p-4">
+                    <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <img src="https://www.thisiscolossal.com/wp-content/uploads/2018/08/Isopoly_05.gif" alt="Streamer" className="rounded-full h-16 w-16" />
+                      <div>
+                      <h2 className="text-2xl font-bold text-white">{selectedStream.title}</h2>
+                      <p className="text-purple-400">{selectedStream.streamer}</p>
+                      <p className="text-gray-400">{selectedStream.game}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <button className="flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+                      <Heart size={24} />
+                      <span>Follow</span>
+                      </button>
+                      <button className="flex items-center space-x-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+                      <Share2 size={24} />
+                      <span>Share</span>
+                      </button>
+                    </div>
+                    </div>
+                    <div className="mt-4 flex space-x-2">
+                    {selectedStream.tags.map(tag => (
+                      <span key={tag} className="bg-gray-700 text-neutral px-2 py-1 rounded text-sm">
+                      {tag}
+                      </span>
+                    ))}
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <button className="flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
-                    <Heart size={20} />
-                    <span>Follow</span>
-                  </button>
-                  <button className="flex items-center space-x-2 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
-                    <Share2 size={20} />
-                    <span>Share</span>
-                  </button>
-                </div>
-              </div>
-              <div className="mt-4 flex space-x-2">
-                {selectedStream.tags.map(tag => (
-                  <span key={tag} className="bg-gray-700 text-neutral px-2 py-1 rounded text-sm">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+                  </div>
 
-         
-        </div>
+                 
+                </div>
 
-        {/* Recommended Streams */}
+                {/* Recommended Streams */}
         <div className="mt-8">
           <h3 className="text-white text-xl font-bold mb-4">Recommended Streams</h3>
           <div className="grid grid-cols-4 gap-4">
