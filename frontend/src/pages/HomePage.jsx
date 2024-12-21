@@ -52,15 +52,19 @@ const HomePage = () => {
       </div>
 
       {recommendedUsers?.length > 0 && (
-        <div className='col-span-1 lg:col-span-1 hidden lg:block'>
-          <div className='bg-secondary rounded-lg shadow p-4'>
-            <h2 className='font-semibold mb-4'>People you may know</h2>
-            {recommendedUsers?.map((user) => (
-              <RecommendedUser key={user._id} user={user} />
-            ))}
-          </div>
-        </div>
-      )}
+  <div className="col-span-1 lg:col-span-1 hidden lg:block h-screen overflow-y-auto">
+    <div className="bg-secondary rounded-lg shadow p-4 h-full">
+      <h2 className="font-semibold mb-4">People you may know</h2>
+      <div className="space-y-4">
+        {recommendedUsers?.map((user) => (
+          <RecommendedUser key={user._id} user={user} />
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
 
       {/* Import the ChatToggle component */}
       <ChatToggle />
