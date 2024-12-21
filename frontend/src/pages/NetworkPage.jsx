@@ -25,7 +25,7 @@ const NetworkPage = () => {
 			</div>
 			<div className='col-span-1 lg:col-span-3'>
 				<div className='bg-secondary rounded-lg shadow p-6 mb-6'>
-					<h1 className='text-2xl font-bold mb-6 text-primary'>My Network</h1>
+					<h1 className='text-2xl font-bold mb-6 text-neutral'>My Network</h1>
 
 					{connectionRequests?.data?.length > 0 ? (
 						<div className='mb-8'>
@@ -37,7 +37,7 @@ const NetworkPage = () => {
 							</div>
 						</div>
 					) : (
-						<div className='bg-secondary border-2 border-accent rounded-lg shadow p-6 text-center mb-6'>
+						<div className='bg-secondary border-4 border-neutral rounded-lg shadow p-6 text-center mb-6'>
 							<UserPlus size={48} className='mx-auto text-neutral mb-4' />
 							<h3 className='text-2xl font-bold text-glow mb-2 text-accent'>No Squad Invites Yet!</h3>
 							<p className='text-neutral'>
@@ -50,8 +50,8 @@ const NetworkPage = () => {
 					)}
 					{connections?.data?.length > 0 && (
 						<div className='mb-8'>
-							<h2 className='text-xl font-semibold mb-4 text-primary'>My Allies</h2>
-							<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-b border-accent py-4'>
+							<h2 className='text-xl font-semibold mb-4 text-neutral'>My Allies</h2>
+							<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t-4 border-b-4 border-neutral  py-4'>
 								{connections.data.map((connection) => (
 									<UserCard key={connection._id} user={connection} isConnection={true} />
 								))}

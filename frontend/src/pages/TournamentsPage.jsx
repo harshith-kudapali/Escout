@@ -85,7 +85,7 @@ const TournamentsPage = () => {
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="form-control">
-              <label className="label">Tournament Name</label>
+              <label className="label text-neutral font-semibold">Tournament Name</label>
               <input
                 type="text"
                 name="name"
@@ -97,7 +97,7 @@ const TournamentsPage = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">Game</label>
+              <label className="label text-neutral font-semibold">Game</label>
               <select
                 name="game"
                 value={tournamentForm.game}
@@ -114,7 +114,7 @@ const TournamentsPage = () => {
               </select>
             </div>
             <div className="form-control">
-              <label className="label">Description</label>
+              <label className="label text-neutral font-semibold">Description</label>
               <textarea
                 name="description"
                 value={tournamentForm.description}
@@ -126,7 +126,7 @@ const TournamentsPage = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="form-control">
-                <label className="label">Start Date</label>
+                <label className="label text-neutral font-semibold">Start Date</label>
                 <input
                   type="date"
                   name="startDate"
@@ -138,7 +138,7 @@ const TournamentsPage = () => {
                 />
               </div>
               <div className="form-control">
-                <label className="label">End Date</label>
+                <label className="label text-neutral font-semibold">End Date</label>
                 <input
                   type="date"
                   name="endDate"
@@ -151,7 +151,7 @@ const TournamentsPage = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="form-control">
-                <label className="label">Max Participants</label>
+                <label className="label text-neutral font-semibold">Max Participants</label>
                 <input
                   type="number"
                   name="maxParticipants"
@@ -165,7 +165,7 @@ const TournamentsPage = () => {
                 />
               </div>
               <div className="form-control">
-                <label className="label">Prize Pool ($)</label>
+                <label className="label text-neutral font-semibold">Prize Pool ($)</label>
                 <input
                   type="number"
                   name="prizePool"

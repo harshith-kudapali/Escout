@@ -34,7 +34,7 @@ const NotificationsPage = () => {
 	const renderNotificationIcon = (type) => {
 		switch (type) {
 			case "like":
-				return <ThumbsUp className='text-blue-500 ' />;
+				return <ThumbsUp className='text-blue-500  ' />;
 
 			case "comment":
 				return <MessageSquare className='text-green-500' />;
@@ -50,7 +50,7 @@ const NotificationsPage = () => {
 			case "like":
 				return (
 					<span>
-						<strong>{notification.relatedUser.name}</strong> liked your post
+						<strong >{notification.relatedUser.name}</strong> liked your post
 					</span>
 				);
 			case "comment":
@@ -106,8 +106,8 @@ const NotificationsPage = () => {
 				<Sidebar user={authUser} />
 			</div>
 			<div className='col-span-1 lg:col-span-3'>
-				<div className='bg-secondary rounded-lg shadow p-6'>
-					<h1 className='text-2xl font-bold mb-6 text-primary'>Notifications</h1>
+				<div className=' rounded-lg shadow p-6'>
+					<h1 className='text-2xl font-bold mb-6 text-neutral'>Notifications</h1>
 
 					{isLoading ? (
 						<p>Loading notifications...</p>
@@ -116,8 +116,8 @@ const NotificationsPage = () => {
 							{notifications.data.map((notification) => (
 								<li
 									key={notification._id}
-									className={`bg-secondary border rounded-lg p-4 my-4 transition-all hover:shadow-md ${
-										!notification.read ? "border-blue-500" : "border-gray-200"
+									className={`bg-secondary  border rounded-lg p-4 my-4 transition-all hover:shadow-md ${
+										!notification.read ? "border-primary border-4" : "border-gray-200"
 									}`}
 								>
 									<div className='flex flex-col gap-4'>
@@ -126,13 +126,13 @@ const NotificationsPage = () => {
 												<img
 													src={notification.relatedUser.profilePicture || "/avatar.png"}
 													alt={notification.relatedUser.name}
-													className='w-12 h-12 rounded-full object-cover'
+													className='w-12 h-12 rounded-full  object-cover'
 												/>
 											</Link>
 
 											<div>
 												<div className='flex items-center gap-2'>
-													<div className='p-1 bg-gray-100 rounded-full'>
+													<div className='p-1  rounded-full'>
 														{renderNotificationIcon(notification.type)}
 													</div>
 													<p className='text-sm'>{renderNotificationContent(notification)}</p>

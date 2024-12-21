@@ -73,7 +73,7 @@ const HomePage = () => {
       {recommendedUsers?.length > 0 && (
         <div className="col-span-1 lg:col-span-1 hidden lg:block ">
           <div className="bg-secondary rounded-lg shadow p-4 space-y-4 ">
-            <h2 className=" text-xl text-primary font-semibold mb-4">People you may know</h2>
+            <h2 className=" text-xl text-neutral font-semibold mb-4">People you may know</h2>
             <div className="flex items-center ">
             <FcSearch size={30} className="text-primary mr-2 mb-4" />
             <input

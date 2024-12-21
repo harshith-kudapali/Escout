@@ -100,11 +100,11 @@ const Post = ({ post }) => {
 						</Link>
 
 						<div>
-							<Link to={`/profile/${post?.author?.username}`}>
+							<Link className="hover:underline text-primary" to={`/profile/${post?.author?.username}`}>
 								<h3 className='font-semibold'>{post.author.name}</h3>
 							</Link>
-							<p className='text-xs text-info'>FragNation user</p>
-							<p className='text-xs text-info'>
+							<p className='text-xs text-opacity-50 text-info'>{post.author.headline}</p>
+							<p className='text-xs text-opacity-50 text-info'>
 								{formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}
 							</p>
 						</div>
@@ -115,7 +115,7 @@ const Post = ({ post }) => {
 						</button>
 					)}
 				</div>
-				<p className='mb-4'>{post.content}</p>
+				<p className='text-lg  text-neutral mb-4'>{post.content}</p>
 				{post.image && <img src={post.image} alt='Post content' className='rounded-lg w-full mb-4' />}
 				
 {/* Video Handling */}

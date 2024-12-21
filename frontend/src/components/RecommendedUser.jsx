@@ -120,8 +120,8 @@ const RecommendedUser = ({ user }) => {
 					className='w-12 h-12 rounded-full mr-3'
 				/>
 				<div>
-					<h3 className='font-semibold text-sm'>{user.name}</h3>
-					<p className='text-xs text-info'>FragNation user</p>
+					<h3 className='font-semibold text-neutral text-sm'>{user.name}</h3>
+					<p className='text-xs text-opacity-50 text-info'>FragNation user</p>
 				</div>
 			</Link>
 			{renderButton()}

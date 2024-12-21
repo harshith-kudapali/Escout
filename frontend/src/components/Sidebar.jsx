@@ -20,10 +20,10 @@ export default function Sidebar({ user }) {
                         alt={user.name}
                         className="w-20 h-20 rounded-full mx-auto mt-[-40px]"
                     />
-                    <h2 className="text-xl font-semibold mt-2">{user.name}</h2>
+                    <h2 className="text-xl text-neutral font-semibold mt-2">{user.name}</h2>
                 </Link>
-                <p className="text-info">{user.headline}</p>
-                <p className="text-info text-xs">{user.connections.length} connections</p>
+                <p className="text-info text-sm text-opacity-50">{user.headline}</p>
+                <p className="text-info text-sm text-opacity-50 text-xs">{user.connections.length} connections</p>
             </div>
 
             {/* Navigation */}
@@ -33,13 +33,13 @@ export default function Sidebar({ user }) {
                         <li>
                             <Link
                                 to="/"
-                                className={`flex items-center py-2 px-4 rounded-md ${
+                                className={`flex items-center py-2 px-4  rounded-md ${
                                     location.pathname === "/"
-                                        ? "bg-primary text-white"
+                                        ? "bg-primary text-white "
                                         : "hover:bg-primary hover:text-white"
                                 } transition-colors`}
                             >
-                                <Home className="mr-2" size={20} /> Home
+                                <Home className="mr-2 text-white" size={20} /> Home
                             </Link>
                         </li>
                         <li>

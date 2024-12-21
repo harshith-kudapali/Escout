@@ -12,13 +12,12 @@ export default {
     themes: [
       {
         FragNation: {
-          primary: "#45a29e", // FragNation Blue (remains same, but can make it darker if needed)
-          secondary: "#1f2833", // Dark background (dark mode)
-          accent: "#66fcf1", // Dark Green for accents (a bit darker version)
+          primary: "#2196F3", // FragNation Blue (remains same, but can make it darker if needed)
+          secondary: "#363952", // Dark background (dark mode)
+          accent: "#2195f3", // Dark Green for accents (a bit darker version)
           "accent-content": "#ff6a3d", // Lighter blue for accents
-          neutral: "#c5c6c7", // Lighter gray for text in dark theme
-          "base-100": "#0b0c10", // Dark gray (background)
-
+          neutral: "#ffffff", // Lighter gray for text in dark theme
+          "base-100": "#1f2030", // Dark gray (background)
           info: "#ffffff", // Light gray for secondary text
           success: "#2A9D8F", // Dark teal (success messages)
           warning: "#F2A900", // Golden yellow (warnings)
