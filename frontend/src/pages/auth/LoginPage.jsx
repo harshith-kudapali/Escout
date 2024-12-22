@@ -41,22 +41,25 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <style jsx>
-        {`.glowing-border-animated {
-  animation: glow 5s infinite;
-}
+      <style>
+        {`
+          .glowing-border-animated {
+            animation: glow 5s infinite;
+          }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); /* blue-500 */
-  }
-  50% {
-    box-shadow: 0 0 10px rgba(108, 99, 255, 1); /* purple-500 */
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); /* blue-500 */
-  }
-}`}</style>
+          @keyframes glow {
+            0% {
+              box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); /* blue-500 */
+            }
+            50% {
+              box-shadow: 0 0 10px rgba(108, 99, 255, 1); /* purple-500 */
+            }
+            100% {
+              box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); /* blue-500 */
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
