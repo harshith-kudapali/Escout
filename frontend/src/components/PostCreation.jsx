@@ -85,7 +85,7 @@ const PostCreation = ({ user }) => {
         setIsGenerating(true);
         try {
             const response = await axios.post(
-                'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBpSaPZll-RXFLJq-g2kWwtV9IyJD1w7dc',
+                'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCyD65dAJfM7zZMlhwTosVmN6roXjnD08I',
                 {
                     contents: [{
                         parts: [{
